@@ -59,14 +59,14 @@ router.get('/', async (req, res) => {
             if (phoneNumber) {
                 phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
                 if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-                    return res.status(400).send("Commencez par le code du pays de votre numéro WhatsApp, exemple : +22898133388");
+                    return res.status(400).send("Commencez par le code du pays de votre numéro WhatsApp, exemple : +50931461936");
                 }
             } else {
-                phoneNumber = await question(chalk.bgBlack(chalk.greenBright("Veuillez saisir votre numéro WhatsApp 🩵\nPar exemple : +22898133388 : ")));
+                phoneNumber = await question(chalk.bgBlack(chalk.greenBright("Veuillez saisir votre numéro WhatsApp 🩵\nPar exemple : +5093146xxx : ")));
                 phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
 
                 if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-                    return res.status(400).send("Commencez par le code du pays de votre numéro WhatsApp, exemple : +22898133388");
+                    return res.status(400).send("Commencez par le code du pays de votre numéro WhatsApp, exemple : +50931461936");
                 }
             }
 
@@ -83,24 +83,24 @@ router.get('/', async (req, res) => {
             const { connection, lastDisconnect } = s;
             if (connection === "open") {
                 await delay(10000);
-                await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `┏━『 *PARKY-MD* 』━◧
+                await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `┏━『 *𝗗𝗔𝗥𝗞-𝗕𝗨𝗚* 』━◧
 ┣⌬ *SESSION = CONNECTÉ*
 ┣⌬ *CREDS.JSON = 📁✅*
 ┗━━━━━━━━━━━━━━━◧
 
 ━━━━━━━━━━━━━━━━━━━
-❶ || 𝐆𝐢𝐭 = 🌐 https://github.com/Jeanparker100/PARKY-BUG-BOT
+❶ || 𝐆𝐢𝐭 = 🌐 https://github.com/DRK-S-TEN
 ━━━━━━━━━━━━━━━━━━━
-❷ || 𝐆𝐫𝐨𝐮𝐩𝐞 = 🪀 https://chat.whatsapp.com/L8NDXnqqDZn2uEtzsgZ8ES
+❷ || 𝐆𝐫𝐨𝐮𝐩𝐞 = 🪀 https://chat.whatsapp.com/Hxduja6rDRh30gSNeUNyfm
 ━━━━━━━━━━━━━━━━━━━
-❸ || 𝐂𝐡𝐚𝐢𝐧𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 = 🪀 https://whatsapp.com/channel/0029VagLiHaEVccM6o6Sqc45
+❸ || 𝐂𝐡𝐚𝐢𝐧𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 = 🪀 https://whatsapp.com/channel/0029Vakp0UnICVfe3I2Fe72w
 ━━━━━━━━━━━━━━━━━━━
 ➡️ 𝐒𝐮𝐢𝐯𝐞𝐳 𝐦a 𝐂𝐡𝐚𝐢𝐧𝐞 𝐝𝐞 𝐒𝐮𝐩𝐩𝐨𝐫𝐭
 
-📞 𝐕𝐨𝐮𝐬 𝐯𝐨𝐮𝐥𝐞𝐳 𝐦𝐞 𝐩𝐚𝐫𝐥𝐞𝐫 ? 👉 https://Wa.me//+22898133388 👈
+👉 https://Wa.me//+50931461936 👈
 ━━━━━━━━━━━━━━━━━━━
 
-© 2024-2099 *Jean Parker*` });
+© 2024-2099 *𝙎-𝙏𝞢𝞜*` });
 
                 let sessionXeon = fs.readFileSync('./sessions/creds.json');
                 await delay(2000);
